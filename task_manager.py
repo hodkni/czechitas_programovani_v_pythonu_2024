@@ -14,9 +14,9 @@ Třída bude mít konstruktor __init__, který přijímá jeden parametr descrip
 V konstruktoru nastavte atributy description a timestamp. Atribut timestamp bude automaticky nastaven na aktuální datum a čas."""
 
 class Task:
-    def __init__(self, description): #init je konstruktor = konstruuje tridu
+    def __init__(self, description):
         self.description = description
-        self.timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') #v argumentu tridy nemusi byt jen povinne parametry, ale i logika
+        self.timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     def __str__(self):
         return f"Task: {self.description}, time: {self.timestamp}."
@@ -31,9 +31,9 @@ add_task(description): Funkce pro přidání nového úkolu. Generuje unikátní
 
 
 def add_task(description):
-    task_id = str(uuid.uuid4()) #musi byt string?
+    task_id = str(uuid.uuid4())
     new_task = Task(description)
-    tasks[task_id] = new_task #do slovniku tasks pridam ke konkretnimu klici task_id vzdy jeho popis
+    tasks[task_id] = new_task 
     print(f"Byl přidán úkol s ID: {task_id}. Popis úkolu: {description}")
 
 
